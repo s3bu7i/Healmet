@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Smart Helmet</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      height: 400px;
+      margin-bottom: 20px;
+    }
+
+    .motorcycle-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .motorcycle-info h2 {
+      margin-right: 10px;
+    }
+
+    .motorcycle-info p {
+      margin: 0;
+    }
+
+    .motorcycle-logo {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .motorcycle-logo img {
+      height: 80px;
+      width: 80px;
+      margin: 0 10px;
+    }
+
+    .red-text {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="motorcycle-info">
+    <h2>Motorcycle Info</h2>
+    <p>Distance: <span id="distance" class="red-text">0 km</span></p>
+    <p>Speed: <span id="speed" class="red-text">0 km/h</span></p>
+  </div>
+
+  <div class="motorcycle-logo" id="motorcycleLogos">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script>
+    // Google Maps API initialization
+    function initMap() {
+      // Create a map centered at a specific location
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 40.7128, lng: -74.0060 }, // Change the coordinates to your desired location
+        zoom: 12, // Adjust the zoom level as needed
+      });
+
+      // Get the motorcycle logos using Axios and append them to the motorcycleLogos div
+      axios.get('motorcycle-logos.json')
+        .then(function (response) {
+          var motorcycleLogos = response.data;
+          var motorcycleLogosContainer = document.getElementById('motorcycleLogos');
+
+          motorcycleLogos.forEach(function (logo) {
+            var img = document.createElement('img');
+            img.src = logo.image;
+            img.alt = logo.name;
+            motorcycleLogosContainer.appendChild(img);
+          });
+        })
+        .catch(function (error) {
+          console.log('Error retrieving motorcycle logos:', error);
+        });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

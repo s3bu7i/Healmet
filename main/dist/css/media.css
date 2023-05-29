@@ -1,0 +1,31 @@
+@media (max-width:576px) {
+    body{
+        padding: 10px;
+    }
+
+    .app-section{
+        height: 100%;
+        width: 100%;
+        max-width: unset;
+    }
+
+    .inner .logopage{
+        padding: 10px;
+    }
+
+    .app-section .passcode .threebtn {
+       width: 100%;
+    }
+
+    .app-section .pages-section .battery-about h5 {
+        font-size: 16px;
+    }
+
+    .app-section .pages-section .battery-about p {
+        font-size: 18px;
+    }
+
+    .app-section .pages-section .battery-about span {
+        width: 13%;
+    }
+}

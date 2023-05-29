@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="dist/image/logo.jpg">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="dist/css/media.css">
+    <link href=https://pro.fontawesome.com/releases/v5.10.0/css/all.css rel=stylesheet>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
+        integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Smart Clothes</title>
+</head>
+
+<body style="height: 100vh !important;">
+    <div class="main-section">
+        <div class="app-section">
+            <div class="logo">
+                <img src="dist/image/logo.jpg" alt="">
+            </div>
+            <div class="input-lock">
+                <input id="pass_input" type="password" readonly maxlength="4">
+            </div>
+            <div class="passcode">
+                <div class="threebtn">
+                    <button onclick="Pass(1)">1</button>
+                    <button onclick="Pass(2)">2</button>
+                    <button onclick="Pass(3)">3</button>
+                </div>
+                <div class="threebtn">
+                    <button onclick="Pass(4)">4</button>
+                    <button onclick="Pass(5)">5</button>
+                    <button onclick="Pass(6)">6</button>
+                </div>
+                <div class="threebtn">
+                    <button onclick="Pass(7)">7</button>
+                    <button onclick="Pass(8)">8</button>
+                    <button onclick="Pass(9)">9</button>
+                </div>
+                <div class="threebtn">
+                    <button onclick="deleteLastChar()"><i class="fal fa-eraser"></i></button>
+                    <button onclick="Pass(0)">0</button>
+                    <button onclick="submitPass()"><i class="fal fa-sign-in"></i></button>
+                </div>
+            </div>
+            <p class="touch"><i class="fal fa-fingerprint"></i></p>
+            <div class="loader_section" id="myLoader">
+                <img src="dist/image/loaderimg.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="dist/script/script.js"></script>
+</body>
+
+</html>
