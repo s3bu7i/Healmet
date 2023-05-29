@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "get-started-with-esp32",
+			"path": "../../get-started-with-esp32"
+		},
+		{
+			"name": "KUP",
+			"path": "../../../Documents/PlatformIO/Projects/KUP"
+		}
+	],
+	"settings": {
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.autopep8"
+		},
+		"python.formatting.provider": "none"
+	}
+}
