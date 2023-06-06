@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Devices</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style3.css" />
+    <style>
+      body {
+        background-color: #1fa0ff;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      #menu-button {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        color: #1fa0ff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      h1 {
+        text-align: center;
+      }
+      .highlight {
+        color: rgb(255, 255, 255);
+      }
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      }
+      .menu-button {
+        background-color: #ffffff;
+        color: #1fa0ff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .device-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .device {
+        background-color: #ffffff;
+        color: #1fa0ff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 30%;
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .device-info {
+        flex-grow: 1;
+        padding: 0 20px;
+      }
+      .device-name {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .device-id {
+        font-size: 14px;
+      }
+      .device-distance,
+      .device-speed {
+        font-size: 18px;
+      }
+      .device-distance:before,
+      .device-speed:before {
+        content: "- ";
+      }
+      .device-distance {
+        color: #ff5722;
+      }
+      .device-speed {
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><span class="highlight">My Devices</span></h1>
+    </header>
+
+    <div id="map">
+      <iframe
+        src="A.png"
+        width="100%"
+        height="400"
+      ></iframe>
+      <button id="menu-button" onclick="randomizeValues()">
+      </button>
+    </div>
+
+    <div class="menu">
+      <button class="menu-button">Menu</button>
+    </div>
+    <div class="menu">
+      <button class="menu-button">Add Device</button>
+    </div>
+
+    <div class="device-container">
+      <div class="device">
+        <div class="device-info">
+          <p class="device-name">Device A</p>
+          <p class="device-id">ID: 12345</p>
+        </div>
+        <div class="device-info">
+          <p class="device-distance">Distance: 10 km</p>
+          <p class="device-speed">Speed: 50 km/h</p>
+        </div>
+      </div>
+      <div class="device">
+        <div class="device-info">
+          <p class="device-name">Device B</p>
+          <p class="device-id">ID: 67890</p>
+        </div>
+        <div class="device-info">
+          <p class="device-distance">Distance: 5 km</p>
+          <p class="device-speed">Speed: 40 km/h</p>
+        </div>
+      </div>
+      <div class="device">
+        <div class="device-info">
+          <p class="device-name">Device C</p>
+          <p class="device-id">ID: 54321</p>
+        </div>
+        <div class="device-info">
+          <p class="device-distance">Distance: 8 km</p>
+          <p class="device-speed">Speed: 55 km/h</p>
+        </div>
+      </div>
+      <div class="device">
+        <div class="device-info">
+          <p class="device-name">Device D</p>
+          <p class="device-id">ID: 09876</p>
+        </div>
+        <div class="device-info">
+          <p class="device-distance">Distance: 12 km</p>
+          <p class="device-speed">Speed: 45 km/h</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function randomizeValues() {
+        var deviceElements = document.getElementsByClassName("device");
+        for (var i = 0; i < deviceElements.length; i++) {
+          var distanceElement = deviceElements[i].querySelector(".device-distance");
+          var speedElement = deviceElements[i].querySelector(".device-speed");
+
+          var randomDistance = Math.floor(Math.random() * 20) + 1; // Random distance between 1 and 20
+          var randomSpeed = Math.floor(Math.random() * 100) + 1; // Random speed between 1 and 100
+
+          distanceElement.innerHTML = "Distance: " + randomDistance + " km";
+          speedElement.innerHTML = "Speed: " + randomSpeed + " km/h";
+        }
+
+        setTimeout(randomizeValues, 2000); // Update values every 2 seconds
+      }
+
+      randomizeValues(); // Start updating values initially
+    </script>
+  </body>
+</html>

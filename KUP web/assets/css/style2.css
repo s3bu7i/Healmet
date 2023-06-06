@@ -1,0 +1,70 @@
+      body {
+        background-color: #1fa0ff;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+      }
+      .menu {
+        text-align: right;
+        margin-bottom: 20px;
+      }
+      .menu-button {
+        background-color: #ffffff;
+        color: #1fa0ff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      .device-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .device {
+        background-color: #ffffff;
+        color: #1fa0ff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 30%;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      .device h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .device p {
+        font-size: 14px;
+        margin: 0;
+      }
+      .device-info {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+      .device-info p {
+        margin: 0;
+      }
+      .device-name {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        position: absolute;
+        left: -50px;
+        top: 50%;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+      }
+      .device-id {
+        position: absolute;
+        bottom: 20px;
+        font-size: 14px;
+      }

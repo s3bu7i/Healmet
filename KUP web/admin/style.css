@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+}
+
+.motorcycle-info {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.motorcycle-info h2 {
+  font-size: 24px;
+}
+
+.motorcycle-info p {
+  font-size: 18px;
+}
+
+#distance,
+#speed {
+  font-weight: bold;
+}
+iframe {
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transition: 0.2s;
+}

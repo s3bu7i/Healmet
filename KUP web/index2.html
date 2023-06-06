@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPU6050 Webpage</title>
+    <style>
+      body {
+        background-color: #1fa0ff;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .sensor-data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .sensor-data label {
+        font-weight: bold;
+      }
+
+      .sensor-data span {
+        font-weight: normal;
+      }
+
+      .sensor-values {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sensor-value {
+        width: 33.33%;
+        text-align: center;
+        padding: 10px;
+        background-color: #eaf0fb;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sensor-value h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .sensor-value p {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>MPU6050 Sensor Data</h1>
+      <div class="sensor-data">
+        <label>Temperature:</label>
+        <span id="temperature">--</span>
+      </div>
+      <div class="sensor-data">
+        <label>Acceleration:</label>
+        <span id="acceleration">--</span>
+      </div>
+      <div class="sensor-data">
+        <label>Gyroscope:</label>
+        <span id="gyroscope">--</span>
+      </div>
+      <div class="sensor-values">
+        <div class="sensor-value">
+          <h2>X-axis</h2>
+          <p id="x-axis">--</p>
+        </div>
+        <div class="sensor-value">
+          <h2>Y-axis</h2>
+          <p id="y-axis">--</p>
+        </div>
+        <div class="sensor-value">
+          <h2>Z-axis</h2>
+          <p id="z-axis">--</p>
+        </div>
+      </div>
+      <div class="footer">
+        <p>MPU6050 Webpage &copy; 2023</p>
+      </div>
+    </div>
+    <script>
+    // Generate random values for temperature, acceleration, and gyroscope axes
+    function generateRandomValue(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // Update the sensor data with random values
+    function updateSensorData() {
+      const temperatureElement = document.getElementById('temperature');
+      const accelerationElement = document.getElementById('acceleration');
+      const gyroscopeElement = document.getElementById('gyroscope');
+      const xAxisElement = document.getElementById('x-axis');
+      const yAxisElement = document.getElementById('y-axis');
+      const zAxisElement = document.getElementById('z-axis');
+
+      const temperature = generateRandomValue(20, 40);
+      const acceleration = generateRandomValue(0, 100);
+      const gyroscopeX = generateRandomValue(-180, 180);
+      const gyroscopeY = generateRandomValue(-180, 180);
+      const gyroscopeZ = generateRandomValue(-180, 180);
+
+      temperatureElement.textContent = temperature + ' °C';
+      accelerationElement.textContent = acceleration + ' m/s^2';
+      gyroscopeElement.textContent = `X: ${gyroscopeX}, Y: ${gyroscopeY}, Z: ${gyroscopeZ}`;
+      xAxisElement.textContent = gyroscopeX;
+      yAxisElement.textContent = gyroscopeY;
+      zAxisElement.textContent = gyroscopeZ;
+
+      // Repeat the update every 3 seconds
+      setTimeout(updateSensorData, 3000);
+    }
+
+    // Start updating the sensor data
+    updateSensorData();
+  </script>
+  </body>
+</html>
